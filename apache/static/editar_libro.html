@@ -31,21 +31,21 @@
 
         }
         function pintarLibro(libro){
-            document.getElementById("nombre").value=libro.nombre;
-            descripcion=document.getElementById("descripcion").value=libro.descripcion;
+            document.getElementById("titulo").value=libro.titulo;
+            autor=document.getElementById("autor").value=libro.autor;
             anio=document,getElementById("anio").value=libro.anio;
             precio=document.getElementById("precio").value=libro.precio;
             document.getElementById("foto").value=libro.foto;
         }
         function guardar(){            
             let nombre=document.getElementById("nombre").value;
-            let descripcion=document.getElementById("descripcion").value;
+            let autor=document.getElementById("autor").value;
             let precio=document.getElementById("precio").value;
             let foto=document.getElementById("foto").value;
             let datos=JSON.stringify({
                 "id":id,
                 "nombre":nombre,
-                "descripcion":descripcion,
+                "autor":autor,
                 "anio":anio,
                 "precio": precio,
                 "foto":foto
@@ -97,11 +97,12 @@
     <div class="columns">
         <div class="column">
             <h3 class="is-size-3">Editar libro</h3>
-                <label for="nombre">Nombre:</label>
-                <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
-                <label for="descripcion">Descripción</label>
-                <input required type="text" class="input" placeholder="Descripción" name="descripcion" id="descripcion">
+                <label for="titulo">Titulo:</label>
+                <input required type="text" class="input" placeholder="Titulo" name="titulo" id="titulo">
+                <label for="autor">Autor</label>
+                <input required type="text" class="input" placeholder="Autor" name="autor" id="autor">
                 <label for="precio">Precio</label>
+                <input required type="number" class="input" placeholder="Año" name="anio" id="anio">
                 <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
                 <label for="foto">Foto</label>
                 <input required type="text" class="input" placeholder="Foto" name="foto" id="foto">

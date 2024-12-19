@@ -16,9 +16,9 @@
             lista.forEach(libro => {
                 tbody.innerHTML+=`<tr>
                         <td><img src="${libro.foto}" width="70"></td>
-                        <td>${libro.nombre}</td>
+                        <td>${libro.titulo}</td>
+                        <td>${libro.ator}</td>
                         <td>${libro.anio}</td>
-                        <td>${libro.descripcion}</td>
                         <td>${libro.precio}</td>
                         <td>
                             <a href="editar_libro.html?id=${libro.id}" class="button is-info">Editar</a>

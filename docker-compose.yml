@@ -26,7 +26,7 @@ services:
     depends_on:
       - mariadb
   apache:
-    build: /apache
+    build: ./apache
     ports:
       - 9095:80
     # meter el html, en volumen o en el build. Mejor en volumen ya que en el build habria que rebuildearlo por cada cambio que se hiciera.

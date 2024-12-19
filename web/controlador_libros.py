@@ -54,8 +54,8 @@ def obtener_libro_por_id(id):
     try:
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
-            #cursor.execute("SELECT id, titulo, autor, anio, precio, foto FROM libros WHERE id = %s", (id,))
-            cursor.execute("SELECT id, titulo, autor, anio, precio, foto FROM libros WHERE id =" + id)
+            cursor.execute("SELECT id, titulo, autor, anio, precio, foto FROM libros WHERE id = %s", (id,))
+            #cursor.execute("SELECT id, titulo, autor, anio, precio, foto FROM libros WHERE id =" + id)
             libro = cursor.fetchone()
             if libro is not None:
                 librojson = convertir_libro_a_json(libro)
