@@ -26,7 +26,7 @@
                 .catch(error => {
                     console.log('error', error)
                     alert("Ha habido un error al recuperar los datos del libro");
-                    location.href="/apache/static/libros.html";
+                    location.href="libros.html";
                 });
 
         }
@@ -61,7 +61,7 @@
                 .then(result => {
                     if (result.status == "OK"){
                         alert("libro modificado")
-                        location.href="/apache/static/libros.html"
+                        location.href="libros.html"
                     } else {
                         alert("El libro no ha podido ser modificado")
                     }
@@ -85,7 +85,7 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="/apache/static/libros">libros</a>
+                <a class="navbar-item" href="libros">libros</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
@@ -106,7 +106,7 @@
                 <label for="foto">Foto</label>
                 <input required type="text" class="input" placeholder="Foto" name="foto" id="foto">
                 <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
-                <a href="/apache/static/libros.html" class="button is-primary mt-2">Volver</a>
+                <a href="libros.html" class="button is-primary mt-2">Volver</a>
             </form>
         </div>
     </div>

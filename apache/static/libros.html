@@ -21,7 +21,7 @@
                         <td>${libro.descripcion}</td>
                         <td>${libro.precio}</td>
                         <td>
-                            <a href="/web/static/editar_libro.html?id=${libro.id}" class="button is-info">Editar</a>
+                            <a href="editar_libro.html?id=${libro.id}" class="button is-info">Editar</a>
                         </td>
                         <td>
                             <button class="button is-danger" onclick="eliminarLibro(${libro.id})">Eliminar</button>
@@ -76,7 +76,7 @@
                 .then(response => response.json())
                 .then(result => {
                     if (result.status == "OK"){
-                        location.href="/web/static/index.html";
+                        location.href="index.html";
                     } else {
                         alert("No se ha podido cerrar sesión")
                     }
@@ -101,8 +101,8 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="/web/static/libros.html">Libros</a>
-                <a class="navbar-item" href="/web/static/subida.html">Archivos</a>
+                <a class="navbar-item" href="libros.html">Libros</a>
+                <a class="navbar-item" href="subida.html">Archivos</a>
                 <a class="navbar-item" href="javascript:cerrarSesion()">Cerrar sesion</a>
             </div>
             <div class="navbar-end">
@@ -115,13 +115,13 @@
         <div class="columns">
             <div class="column">
                 <h3 class="is-size-3">Libros</h3>
-                <a href="/web/static/agregar_libro.html" class="button is-success">Agregar</a>
+                <a href="agregar_libro.html" class="button is-success">Agregar</a>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Imagen</th>
                             <th>Nombre</th>
-                            <th>Descripción</th>
+                            <th>Autor</th>
                             <th>Año</th>
                             <th>Precio</th>
                             <th>Editar</th>
