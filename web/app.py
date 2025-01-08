@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config.from_pyfile('settings.py')
 cargarvariables()
   
-import rutas_inicio
+import rutas_usuarios
 
 import rutas_upload
 

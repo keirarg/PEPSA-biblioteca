@@ -42,9 +42,9 @@
                 .then(response => response.json())
                 .then(result => {
                     if (result.status == "OK"){
-                        document.getElementById("contenidoArchivo").innerHTML=result.contenido;
+                        document.getElementById("contenidoArchivo").innerText=result.contenido;
                     } else {
-                        document.getElementById("contenidoArchivo").innerHTML="EL CONTENIDO NO ESTA DISPONIBLE";                        
+                        document.getElementById("contenidoArchivo").innerText="EL CONTENIDO NO ESTA DISPONIBLE";                        
                     }
                 })
                 .catch(error => {

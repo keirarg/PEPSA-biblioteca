@@ -12,9 +12,9 @@
         }
         function pintarLibros(lista){
             let tbody=document.getElementsByTagName("tbody")[0];
-            tbody.innerHTML="";
+            tbody.innerText="";
             lista.forEach(libro => {
-                tbody.innerHTML+=`<tr>
+                tbody.innerText+=`<tr>
                         <td><img src="${libro.foto}" width="70"></td>
                         <td>${libro.titulo}</td>
                         <td>${libro.ator}</td>
