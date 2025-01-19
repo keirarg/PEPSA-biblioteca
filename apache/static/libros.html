@@ -14,7 +14,7 @@
             let tbody=document.getElementsByTagName("tbody")[0];
             tbody.innerText="";
             lista.forEach(libro => {
-                tbody.innerText+=`<tr>
+                tbody.innerHTML+=`<tr>
                         <td><img src="${libro.foto}" width="70"></td>
                         <td>${libro.titulo}</td>
                         <td>${libro.ator}</td>

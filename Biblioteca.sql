@@ -6,7 +6,7 @@ CREATE TABLE libros(
     autor VARCHAR(255) NOT NULL,
     anio INT(4) NOT NULL,
     precio DECIMAL(9,2) NOT NULL,
-	foto VARCHAR(255)
+	foto LONGTEXT
 );
 CREATE TABLE usuarios(
 	usuario VARCHAR(100) NOT NULL PRIMARY KEY,

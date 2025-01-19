@@ -11,18 +11,16 @@
         myHeaders.append("Content-Type", "application/json");
 
         function guardar(){
-            let id = document.getElementById("id").value;
-            let nombre=document.getElementById("nombre").value;
+            let titulo=document.getElementById("titulo").value;
             let autor=document.getElementById("autor").value;
             let anio =document.getElementById("anio").value;
             let precio=document.getElementById("precio").value;
             let foto=document.getElementById("foto").value;
             let datos=JSON.stringify({
-                "id":id,
-                "nombre":nombre,
+                "titulo":titulo,
                 "autor":autor,
                 "anio":anio,
-                "precio": precio,
+                "precio":precio,
                 "foto":foto
             });
             var requestOptions = {
@@ -72,8 +70,8 @@
     <div class="columns">
         <div class="column">
             <h3 class="is-size-3">Agregar libro</h3>
-                <label for="nombre">Nombre:</label>
-                <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
+                <label for="titulo">Titulo:</label>
+                <input required type="text" class="input" placeholder="Titulo" name="titulo" id="titulo">
                 <label for="autor">Autor</label>
                 <input required type="text" class="input" placeholder="Autor" name="autor" id="autor">
                 <label for="anio">Año</label>
@@ -81,7 +79,7 @@
                 <label for="precio">Precio</label>
                 <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
                 <label for="foto">Foto</label>
-                <input required type="text" class="input" placeholder="Foto" name="foto" id="foto">
+                <input required type="file" class="input" placeholder="Foto" name="foto" id="foto">
                 <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
                 <a href="libros.html" class="button is-primary mt-2">Volver</a>
             </form>
