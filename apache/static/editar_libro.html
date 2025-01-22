@@ -45,6 +45,7 @@
             let autor = document.getElementById("autor").value;
             let anio = document.getElementById("anio").value;
             let precio = document.getElementById("precio").value;
+            let precioIVA = document.getElementById("precioIVA").value;
             let foto = document.getElementById("foto").value;
             let datos = JSON.stringify({
                 "id": id,
@@ -52,6 +53,7 @@
                 "autor": autor,
                 "anio": anio,
                 "precio": precio,
+                "precioIVA": precioIVA,
                 "foto": foto
             });
             var requestOptions = {

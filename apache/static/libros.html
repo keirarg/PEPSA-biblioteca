@@ -17,9 +17,10 @@
                 tbody.innerHTML+=`<tr>
                         <td><img src="${libro.foto}" width="70"></td>
                         <td>${libro.titulo}</td>
-                        <td>${libro.ator}</td>
+                        <td>${libro.autor}</td>
                         <td>${libro.anio}</td>
                         <td>${libro.precio}</td>
+                        <td>${libro.precioIVA}</td>
                         <td>
                             <a href="editar_libro.html?id=${libro.id}" class="button is-info">Editar</a>
                         </td>
@@ -124,6 +125,7 @@
                             <th>Autor</th>
                             <th>Año</th>
                             <th>Precio</th>
+                            <th>PrecioIVA</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>

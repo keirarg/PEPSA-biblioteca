@@ -6,6 +6,7 @@ CREATE TABLE libros(
     autor VARCHAR(255) NOT NULL,
     anio INT(4) NOT NULL,
     precio DECIMAL(9,2) NOT NULL,
+    precioIVA DECIMAL(9,2) NOT NULL,
 	foto LONGTEXT
 );
 CREATE TABLE usuarios(
@@ -15,4 +16,4 @@ CREATE TABLE usuarios(
     fechaUltimoAcceso DATE
 );
 INSERT INTO `usuarios` (`usuario`, `clave`, `perfil`, `fechaUltimoAcceso`) VALUES ('root', '1234', 'admin', '2022-03-01');
-INSERT INTO `libros` (`id`, `titulo`, `autor`, `anio`, `precio`, `foto`) VALUES (1, 'Drácula', 'Bram Stoker', 1897, 19.95, NULL);
+INSERT INTO `libros` (`id`, `titulo`, `autor`, `anio`, `precio`, `precioIVA`, `foto`) VALUES (1, 'Drácula', 'Bram Stoker', 1897, 19.95, 24.14, NULL);

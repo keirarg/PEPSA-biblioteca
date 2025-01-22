@@ -6,8 +6,6 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER: agente
-      MARIADB_USER_PASSWORD: 0traClave #No funciona nada más que con el usuario root
       MARIADB_DATABASE: PEPSA
     volumes:
       - ./mariadb_data:/var/lib/mysql
