@@ -22,7 +22,7 @@ def guardar_libro():
     if (content_type == 'application/json'):
         libro_json = request.json
         #validacion de campos, tamaño, etc
-        ret,code=controlador_libros.insertar_libro(libro_json["titulo"], libro_json["autor"], int(libro_json["anio"]), float(libro_json["precio"]), funciones_auxiliares.calculariva(float(libro_json["precio"])), libro_json["foto"])
+        ret,code=controlador_libros.insertar_libro(libro_json["titulo"], libro_json["autor"], int(libro_json["anio"]), float(libro_json["precio"]), float(libro_json["precio"]) + funciones_auxiliares.calculariva(float(libro_json["precio"])), libro_json["foto"])
     else:
         ret={"status":"Bad request"}
         code=401
@@ -39,7 +39,7 @@ def actualizar_libro():
     if (content_type == 'application/json'):
         libro_json = request.json
         #validacion de campos, tamaño, etc
-        ret,code=controlador_libros.actualizar_libro(libro_json["id"], libro_json["titulo"], libro_json["autor"], int(libro_json["anio"]), float(libro_json["precio"]), funciones_auxiliares.calculariva(float(libro_json["precio"])), libro_json["foto"])
+        ret,code=controlador_libros.actualizar_libro(libro_json["id"], libro_json["titulo"], libro_json["autor"], int(libro_json["anio"]), float(libro_json["precio"]), float(libro_json["precio"]) + funciones_auxiliares.calculariva(float(libro_json["precio"])), libro_json["foto"])
     else:
         ret={"status":"Bad request"}
         code=401

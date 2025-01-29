@@ -6,13 +6,14 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER: root #agente
-      MARIADB_USER_PASSWORD: 0traClave
-      MARIADB_DATABASE: PEPS
+      MARIADB_DATABASE: PEPSA
     volumes:
       - ./mariadb_data:/var/lib/mysql
       - ./Biblioteca.sql:/docker-entrypoint-initdb.d/Biblioteca.sql
     user: mysql
+    networks:
+      - backend
+
   phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
@@ -23,13 +24,17 @@ services:
       - 9093:80
     depends_on:
       - mariadb
+    networks:
+      - backend
+
   python:
     build: .
     container_name: python
     environment:
+      PYTHONUNBUFFERED: 1
       DB_USERNAME: root
       DB_PASSWORD: example
-      DB_DATABASE: PEPS
+      DB_DATABASE: PEPSA
       DB_HOST: mariadb
       DB_PORT: 3306
       PORT: 8080
@@ -38,14 +43,19 @@ services:
       - 9094:8080
     depends_on:
       - mariadb
+    networks:
+      - backend
+
   apache:
     build: ./apache
     container_name: apache
     ports:
-      - 9095:80
-
-    # meter el html, en volumen o en el build. Mejor en volumen ya que en el build habria que rebuildearlo por cada cambio que se hiciera.
-    # a lo mejor en un futuro, cuando haya que versionarlo, nos conviene más meterlo en la build
-
+      - 7777:80
     volumes:
-      - ./web:/var/www/html
+      - ./apache/static:/var/www/html
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

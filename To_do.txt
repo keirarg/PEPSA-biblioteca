@@ -1,3 +1,0 @@
-- Frontend
-- Crear un volumen para apache (creo que es para apache al menos)
-- Añadir validaciones

@@ -11,8 +11,9 @@ services:
       - ./mariadb_data:/var/lib/mysql
       - ./Biblioteca.sql:/docker-entrypoint-initdb.d/Biblioteca.sql
     user: mysql
-    ports:
-      - 3306:3306
+    networks:
+      - backend
+
   phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
@@ -23,6 +24,8 @@ services:
       - 9093:80
     depends_on:
       - mariadb
+    networks:
+      - backend
 
   python:
     build: .
@@ -40,17 +43,22 @@ services:
       - 9094:8080
     depends_on:
       - mariadb
+    networks:
+      - backend
 
   apache:
     build: ./apache
     container_name: apache
     ports:
-      - 9095:80
+      - 7777:80
     volumes:
       - ./apache/static:/var/www/html
+    networks:
+      - backend
 
-    # meter el html, en volumen o en el build. Mejor en volumen ya que en el build habria que rebuildearlo por cada cambio que se hiciera.
-    # a lo mejor en un futuro, cuando haya que versionarlo, nos conviene más meterlo en la build
+networks:
+  backend:
+    driver: bridge
 
 
     

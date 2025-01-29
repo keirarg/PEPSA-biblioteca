@@ -45,7 +45,7 @@
             let autor = document.getElementById("autor").value;
             let anio = document.getElementById("anio").value;
             let precio = document.getElementById("precio").value;
-            let precioIVA = document.getElementById("precioIVA").value;
+           // let precioIVA = document.getElementById("precioIVA").value;
             let foto = document.getElementById("foto").value;
             let datos = JSON.stringify({
                 "id": id,
@@ -53,7 +53,7 @@
                 "autor": autor,
                 "anio": anio,
                 "precio": precio,
-                "precioIVA": precioIVA,
+              //  "precioIVA": precioIVA,
                 "foto": foto
             });
             var requestOptions = {
@@ -116,7 +116,7 @@
                 <input required type="number" class="input" placeholder="Año" name="anio" id="anio">
                 <label for="precio">Precio</label>
                 <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
-                <label for="foto">Cambiar oto</label>
+                <label for="foto">Cambiar foto</label>
                 <input required type="file" class="input" placeholder="Foto" name="foto" id="foto">
                 <img src="#" alt="Foto" width="500" height="600" id="img-foto">
                 <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
