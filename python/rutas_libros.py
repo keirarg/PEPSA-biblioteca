@@ -4,8 +4,6 @@ from __main__ import app
 import controlador_libros
 import funciones_auxiliares
 
-
-
 @app.route("/libros",methods=["GET"])
 def libros():
     libros,code= controlador_libros.obtener_libros()

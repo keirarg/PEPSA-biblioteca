@@ -8,8 +8,8 @@ services:
       MARIADB_ROOT_PASSWORD: example
       MARIADB_DATABASE: PEPSA
     volumes:
-      - ./mariadb_data:/var/lib/mysql
-      - ./Biblioteca.sql:/docker-entrypoint-initdb.d/Biblioteca.sql
+      - ./mariadb_data:/var/lib/mysql:rw
+      - ./Biblioteca.sql:/docker-entrypoint-initdb.d/Biblioteca.sql:ro
     user: mysql
     networks:
       - backend
