@@ -6,14 +6,14 @@ import json
 import sys
 import funciones_auxiliares
 import controlador_usuarios
-        
+
 @app.route("/login",methods=['POST'])
 def login():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         libro_json = request.json
-        username = libro_json['username']
-        password = libro_json['password']
+        username = funciones_auxiliares.sanitize_input(libro_json['username'])
+        password = funciones_auxiliares.sanitize_input(libro_json['password'])
         respuesta,code= controlador_usuarios.login_usuario(username, password)
         return json.dumps(respuesta, cls = funciones_auxiliares.Encoder), code
     else:

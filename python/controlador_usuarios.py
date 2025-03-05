@@ -3,13 +3,12 @@ from bd import obtener_conexion
 from flask import session
 import sys
 
-
 def login_usuario(username, password):
     try:
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
-                #cursor.execute("SELECT perfil FROM usuarios WHERE usuario = %s and clave= %s",(username,password))
-                cursor.execute("SELECT perfil FROM usuarios WHERE usuario = '" + username +"' and clave= '" + password + "'")
+                cursor.execute("SELECT perfil FROM usuarios WHERE usuario = %s and clave= %s",(username,password))
+                #cursor.execute("SELECT perfil FROM usuarios WHERE usuario = '" + username +"' and clave= '" + password + "'")
                 usuario = cursor.fetchone()
         conexion.close()
         if usuario is None:
@@ -29,8 +28,8 @@ def alta_usuario(username, password, perfil):
     try:
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
-                #cursor.execute("SELECT perfil FROM usuarios WHERE usuario = %s and clave= %s",(username,password))
-                cursor.execute("SELECT perfil FROM usuarios WHERE usuario = '" + username +"' and clave= '" + password + "'")
+                cursor.execute("SELECT perfil FROM usuarios WHERE usuario = %s and clave= %s",(username,password))
+                #cursor.execute("SELECT perfil FROM usuarios WHERE usuario = '" + username +"' and clave= '" + password + "'")
                 usuario = cursor.fetchone()
                 if usuario is None:
                     print("INSERT INTO usuarios(usuario,clave,perfil) VALUES('"+ username +"','"+  password+"','"+ perfil+"')") 
