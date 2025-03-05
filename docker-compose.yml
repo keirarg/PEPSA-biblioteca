@@ -2,7 +2,7 @@ version: '3'
 services:
   mariadb:
     image: mariadb
-    container_name: mariadb
+    container_name: mariadba1
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
@@ -16,12 +16,12 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmin
+    container_name: phpmyadmina1
     restart: always
     environment:
       - PMA_HOST=mariadb
     ports:
-      - 9093:80
+      - 7001:80
     depends_on:
       - mariadb
     networks:
@@ -29,7 +29,7 @@ services:
 
   python:
     build: .
-    container_name: python
+    container_name: pythona1
     environment:
       PYTHONUNBUFFERED: 1
       DB_USERNAME: root
@@ -48,9 +48,9 @@ services:
 
   apache:
     build: ./apache
-    container_name: apache
+    container_name: apachea1
     ports:
-      - 7777:80
+      - 6001:80
     volumes:
       - ./apache/static:/var/www/html
     networks:
