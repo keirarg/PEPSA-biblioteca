@@ -20,6 +20,7 @@
             var raw = JSON.stringify({
                 "username": document.getElementById("username").value,
                 "password": document.getElementById("password").value,
+                "email": document.getElementById("email").value,
                 "profile": document.getElementById("profile").value
             });
 
@@ -47,8 +48,9 @@
     <h1>REGISTRO DEL SISTEMA</h1>
     <label>Usuario</label><input type="text" name="username" id="username"><br>
     <label>Clave</label><input type="password" name="password" id="password"><br>
+    <label>Correo</label><input type="email" name="email" id="email" required><br>
     <label>Perfil</label><input type="text" disabled name="profile" id="profile" value="normal"><br>
-    <label class="error">Usuario ya existe</label>
-    <button type="button" onclick="conectar()">ENVIAR</button>
+    <label class="error">Usuario ya existe o ha habido un error</label>
+    <button type="button" onclick="conectar()">ACEPTAR</button>
 </body>
 </html>

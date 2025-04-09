@@ -4,8 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP PEPS</title>
+    <title>Biblioteca</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            margin-right: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px;
+            color: white;
+            background-color: #a8a6a6;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
         .error{
             display: none;
             color: red;
@@ -32,6 +95,9 @@
                 .then(response => response.json())
                 .then(result => {
                     if (result.status=="OK"){
+                        // estas proximas 2 lineas las tiene fernando
+                        sessionStorage.setItem("csrf_token",result.csrf_token)
+                        sessionStorage.setItem("perfil",result.perfil)
                         location.href="libros.html";
                     } else {
                         document.getElementsByClassName("error")[0].style.display="block";
@@ -42,11 +108,19 @@
     </script>
 </head>
 <body>
-    <h1>BIENVENIDO AL SISTEMA</h1>
-    <label>Usuario</label><input type="text" name="username" id="username"><br>
-    <label>Clave</label><input type="password" name="password" id="password"><br>
-    <label class="error">Usuario/clave erronea</label>
-    <button type="button" onclick="conectar()">ENVIAR</button>
-    <button type="button" onclick="location.href='registro.html'">REGISTRARSE</button>
+    <div class="login-container">
+        <h1>Iniciar sesión en la biblioteca</h1>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username">Usuario:</label><input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Clave:</label><input type="password" id="password" name="password" required>
+            </div>
+            <label class="error">Usuario/clave erronea</label>
+            <button type="button" onclick="conectar()">ENTRAR</button>
+            <button type="button" onclick="location.href='registro.html'">REGISTRARSE</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -10,6 +10,11 @@
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+
+        if (sessionStorage.getItem("csrf_token")){
+            myHeaders.append("X-CSRFToken", sessionStorage.getItem("csrf_token"))
+        }
+
         var queryString = window.location.search;
         var urlParams = new URLSearchParams(queryString);
         var id = urlParams.get('id');
@@ -37,7 +42,7 @@
             autor = document.getElementById("autor").value = libro.autor;
             anio = document.getElementById("anio").value = libro.anio;
             precio = document.getElementById("precio").value = libro.precio;
-            foto = document.getElementById("img-foto").src = libro.foto;
+            foto = document.getElementById("foto").src = libro.foto;//estaba como img-foto
         }
 
         function guardar() {
@@ -63,7 +68,6 @@
             };
 
             console.log(requestOptions);
-            
 
             fetch("/api/libros", requestOptions)
                 .then(response => response.json())
@@ -118,7 +122,8 @@
                 <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
                 <label for="foto">Cambiar foto</label>
                 <input required type="file" class="input" placeholder="Foto" name="foto" id="foto">
-                <img src="#" alt="Foto" width="500" height="600" id="img-foto">
+                <img src="#" alt="Foto" width="500" height="600" id="foto">
+                <!-- estaba como img-foto -->
                 <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
                 <a href="libros.html" class="button is-primary mt-2">Volver</a>
                 </form>
