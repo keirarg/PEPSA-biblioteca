@@ -1,5 +1,6 @@
-from __future__ import print_function
+from __main__ import app
 from bd import obtener_conexion
+from funciones_auxiliares import sanitize_input
 import sys
 
 def insertar_libro(titulo, autor, anio, precio, precioIVA, foto):
@@ -16,8 +17,7 @@ def insertar_libro(titulo, autor, anio, precio, precioIVA, foto):
         conexion.commit()
         conexion.close()
     except:
-        print("Excepcion al insertar un libro", file=sys.stdout)
-        
+        app.logger.info("Excepcion al insertar un libro")
         ret = {"status": "Failure" }
         code=500
     return ret,code
@@ -25,12 +25,15 @@ def insertar_libro(titulo, autor, anio, precio, precioIVA, foto):
 def convertir_libro_a_json(libro):
     d = {}
     d['id'] = libro[0]
-    d['titulo'] = libro[1]
-    d['autor'] = libro[2]
+    d['titulo'] = sanitize_input(libro[1])
+    d['autor'] = sanitize_input(libro[2])
     d['anio'] = libro[3]
     d['precio'] = libro[4]
     d['precioIVA'] = libro[5]
-    d['foto'] = libro[6]
+    if (libro[6]):
+        d['foto'] = sanitize_input(libro[6])
+    else:
+        d['foto'] = ""
     return d
 
 def obtener_libros():
@@ -45,8 +48,8 @@ def obtener_libros():
                     librosjson.append(convertir_libro_a_json(libro))
         conexion.close()
         code=200
-    except:
-        print("Excepcion al obtener los libros", file=sys.stdout)
+    except Exception as e:
+        app.logger.info(f"Excepcion al obtener los libros {e}")
         librosjson=[]
         code=500
     return librosjson,code
@@ -57,15 +60,14 @@ def obtener_libro_por_id(id):
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
             cursor.execute("SELECT id, titulo, autor, anio, precio, precioIVA, foto FROM libros WHERE id = %s", (id,))
-            #cursor.execute("SELECT id, titulo, autor, anio, precio, foto FROM libros WHERE id =" + id)
             libro = cursor.fetchone()
             if libro is not None:
                 librojson = convertir_libro_a_json(libro)
         conexion.close()
         code=200
     except:
-        print("Excepcion al recuperar un libro", file=sys.stdout)
-        code=500
+       app.logger.info("Excepcion al obtener un libro")
+       code=500
     return librojson,code
 
 
@@ -73,7 +75,7 @@ def eliminar_libro(id):
     try:
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
-            cursor.execute("DELETE FROM libros WHERE id = %s", (id,))
+            cursor.execute("DELETE FROM libros WHERE id = %s LIMIT 1", (id,))
             if cursor.rowcount == 1:
                 ret={"status": "OK" }
             else:
@@ -82,7 +84,7 @@ def eliminar_libro(id):
         conexion.close()
         code=200
     except:
-        print("Excepcion al eliminar un libro", file=sys.stdout)
+        app.logger.info("Excepcion al eliminar un libro")
         ret = {"status": "Failure" }
         code=500
     return ret,code
@@ -101,7 +103,7 @@ def actualizar_libro (id, titulo, autor, anio, precio, precioIVA, foto):
         conexion.close()
         code=200
     except:
-        print("Excepcion al eliminar un libro", file=sys.stdout)
+        app.logger.info("Excepcion al actualizar un libro")
         ret = {"status": "Failure" }
         code=500
     return ret,code

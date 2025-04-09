@@ -1,0 +1,97 @@
+[2025-04-02 07:37:04,559] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.3:8080
+[2025-04-02 07:37:04,560] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-02 07:59:33,052] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-02 07:59:33,053] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-02 08:18:05,244] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-02 08:18:05,245] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-02 08:21:20,248] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-02 08:21:20,249] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 08:30:42,184] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-03 08:30:42,184] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 08:32:07,541] INFO in controlador_usuarios: Acceso usuario root correcto
+[2025-04-03 08:32:07,554] INFO in app: path: /login | method: POST | status: 200 OK | size: 144 >>> 172.22.0.5
+[2025-04-03 08:32:07,555] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 08:32:07] "POST /login HTTP/1.1" 200 -
+[2025-04-03 08:32:08,070] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 08:32:08,070] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 08:32:08] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 08:34:53,285] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.3:8080
+[2025-04-03 08:34:53,286] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:10:08,425] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-03 09:10:08,425] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:44:01,170] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.3:8080
+[2025-04-03 09:44:01,171] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:45:59,110] INFO in controlador_usuarios: Acceso usuario root correcto
+[2025-04-03 09:45:59,113] INFO in app: path: /login | method: POST | status: 200 OK | size: 144 >>> 172.22.0.5
+[2025-04-03 09:45:59,114] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:45:59] "POST /login HTTP/1.1" 200 -
+[2025-04-03 09:45:59,265] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:45:59,266] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:45:59] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:47:48,393] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.3:8080
+[2025-04-03 09:47:48,393] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:49:53,514] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-03 09:49:53,514] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:51:41,406] INFO in controlador_usuarios: Nuevo usuario creado
+[2025-04-03 09:51:41,407] INFO in app: path: /registro | method: POST | status: 200 OK | size: 16 >>> 172.22.0.5
+[2025-04-03 09:51:41,408] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:51:41] "POST /registro HTTP/1.1" 200 -
+[2025-04-03 09:51:46,651] INFO in controlador_usuarios: Acceso usuario alicia correcto
+[2025-04-03 09:51:46,656] INFO in app: path: /login | method: POST | status: 200 OK | size: 145 >>> 172.22.0.5
+[2025-04-03 09:51:46,657] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:51:46] "POST /login HTTP/1.1" 200 -
+[2025-04-03 09:51:46,782] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:51:46,783] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:51:46] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:54:00,192] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:54:00,193] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:54:00] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:54:01,072] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:54:01,072] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:54:01] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:54:01,492] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:54:01,493] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:54:01] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:55:22,367] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://172.22.0.4:8080
+[2025-04-03 09:55:22,367] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2025-04-03 09:57:32,657] INFO in controlador_usuarios: Acceso usuario root correcto
+[2025-04-03 09:57:32,660] INFO in app: path: /login | method: POST | status: 200 OK | size: 144 >>> 172.22.0.5
+[2025-04-03 09:57:32,661] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:57:32] "POST /login HTTP/1.1" 200 -
+[2025-04-03 09:57:32,858] INFO in app: path: /libros | method: GET | status: 200 OK | size: 124 >>> 172.22.0.5
+[2025-04-03 09:57:32,858] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:57:32] "GET /libros HTTP/1.1" 200 -
+[2025-04-03 09:57:41,101] INFO in app: path: /logout | method: GET | status: 200 OK | size: 16 >>> 172.22.0.5
+[2025-04-03 09:57:41,102] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:57:41] "GET /logout HTTP/1.1" 200 -
+[2025-04-03 09:58:05,951] INFO in controlador_usuarios: Nuevo usuario creado
+[2025-04-03 09:58:05,952] INFO in app: path: /registro | method: POST | status: 200 OK | size: 16 >>> 172.22.0.5
+[2025-04-03 09:58:05,953] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:58:05] "POST /registro HTTP/1.1" 200 -
+[2025-04-03 09:58:40,228] INFO in controlador_usuarios: Nuevo usuario creado
+[2025-04-03 09:58:40,229] INFO in app: path: /registro | method: POST | status: 200 OK | size: 16 >>> 172.22.0.5
+[2025-04-03 09:58:40,229] INFO in _internal: 172.22.0.5 - - [03/Apr/2025 09:58:40] "POST /registro HTTP/1.1" 200 -
+[2025-04-03 10:21:12,399] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.192.3:8080
+[2025-04-03 10:21:12,399] INFO in _internal: [33mPress CTRL+C to quit[0m
