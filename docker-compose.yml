@@ -5,7 +5,7 @@ services:
     container_name: mariadba1
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secretos/db_root_password
       MARIADB_DATABASE: PEPSA
     volumes:
       - mariadb_dataa1:/var/lib/mysql
